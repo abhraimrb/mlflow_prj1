@@ -1,10 +1,10 @@
-name: mlflow_clf
+name: tutorial
 
 conda_env: conda.yaml
 
 entry_points:
   main:
     parameters:
-      data_file:"/dbfs/FileStore/mlflow_proj/cust_data_processed.csv"
-      C: {type: float, default: 0.5}
-    command: "python train_clf.py {C}"
+      alpha: float
+      l1_ratio: {type: float, default: 0.1}
+    command: "python train_clf.py {alpha} {l1_ratio}"
